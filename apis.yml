@@ -1,7 +1,28 @@
 aid: petcube
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/petcube.png
 name: Petcube
-description: Petcube is a company surfaced as a portfolio company of y-combinator and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Petcube is a pet-technology company (a Y Combinator alum) that makes interactive
+  Wi-Fi pet cameras and a companion mobile app for remote pet care. Its consumer
+  hardware line includes the Petcube Cam, Bites treat-dispensing camera, and Play
+  laser camera, offering HD video, night vision, two-way audio, motion and sound
+  alerts, and app-controlled treat tossing and play. Petcube also sells the Care
+  subscription (cloud video history, extended alerts) and Online Vet / Emergency
+  Fund telehealth services. As of this enrichment pass Petcube exposes no public
+  developer API, developer portal, or documented integration surface — the primary
+  interface is the consumer iOS/Android app tied to its private cloud backend. This
+  profile is maintained in the API Evangelist network as a company record.
 url: https://raw.githubusercontent.com/api-evangelist/petcube/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,12 +32,36 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Pet Tech
+- Internet of Things
+- Consumer Hardware
+- Cameras
+- Pet Care
+- Telehealth
+- Y Combinator
 apis: []
+common:
+- type: DomainSecurity
+  url: security/petcube-domain-security.yml
+- type: Website
+  url: https://petcube.com/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-20'
+  status: nochange
+  pass: local-v1
+  artifacts_added: 0
+  notes: >-
+    Re-probed for a public API surface; still none. No /.well-known/security.txt
+    (404), no /llms.txt (301 to a 404 catch-all), no /.well-known/api-catalog
+    (404); developer.petcube.com does not resolve, api.petcube.com returns 404;
+    zero npm/PyPI packages and no petcube GitHub org. Consumer pet-camera company
+    with a private mobile/cloud backend only. Domain-security probe artifact from
+    the prior pass remains the only real artifact; nothing new to add.
